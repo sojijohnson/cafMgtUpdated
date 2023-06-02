@@ -45,7 +45,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exceptio
            .csrf()
            .disable()
             .authorizeHttpRequests()
-            .requestMatchers("/category/*","/user/login","/user/*","/user/getall","/api/auth/register","/api/auth/authenticate","/user/signup","/user/forgotPassword")
+            .requestMatchers("/category/*","/product/*/*","/product/*","/user/login","/user/*","/user/getall","/api/auth/register","/api/auth/authenticate","/user/signup","/user/forgotPassword")
             .permitAll()
             .anyRequest()
             .authenticated()

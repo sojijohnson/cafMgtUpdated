@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 
 
-@NamedQuery(name ="Category.getAllCategory", query="select u from Category u ")
+@NamedQuery(name ="Category.getAllCategory", query="select u from Category u where u.id  in(select p.category from Product p where p.status='true') ")
 
 @Data
 @Builder
@@ -32,7 +32,6 @@ public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-
     private Integer id;
 
     @Column(name="name")
